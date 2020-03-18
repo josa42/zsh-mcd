@@ -4,9 +4,7 @@ mcd() {
   mkdir -p "$1" && cd "$1" || return 1
 }
 
-_mcd() {
-  _files -W "$1" -/
-}
+compdef _mkdir mcd
 
 ccd() {
   dir="$(echo $1 | xargs -n1 basename | sed 's/\.git$//')"
